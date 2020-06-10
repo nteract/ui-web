@@ -1,0 +1,25 @@
+{
+  "name": "ui-web",
+  "version": "1.0.0",
+  "description": "Create UI lib for nteract/web and nteract/play",
+  "scripts": {
+    "start": "start-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nteract/ui-web.git"
+  },
+  "author": "nteract contributors",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nteract/ui-web/issues"
+  },
+  "homepage": "https://github.com/nteract/ui-web#readme",
+  "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
