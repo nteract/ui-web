@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Create UI lib for nteract/web and nteract/play",
   "scripts": {
-    "start": "start-storybook -p 8001"
+    "start": "start-storybook -p 8001",
+    "build": "build-storybook",
+    "test": "jest"
   },
   "repository": {
     "type": "git",

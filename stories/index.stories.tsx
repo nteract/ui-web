@@ -1,16 +1,29 @@
 import React from 'react';
+import { Button } from '@storybook/react/demo';
 
 export default {
-  title: 'Button',
+  title: 'Dummy',
   parameters: {
-      info: { inline: true },
+      info: {
+        inline: true,
+        text: `
+    This is just a dummy component. Add description or documentation here, supports markdown
+
+    ~~~js
+    <Button>
+          <span role="img" aria-label="so cool">
+                  😀 😎 👍 💯
+          </span>
+    </Button>
+    ~~~
+  `,},
     },
 };
 
-export const withEmoji = () => (
-    <div>
+export const withDetail = () => (
+    <Button>
           <span role="img" aria-label="so cool">
                   😀 😎 👍 💯
-                </span>
-                  </div>
+          </span>
+    </Button>
 );
