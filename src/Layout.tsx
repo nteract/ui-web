@@ -43,8 +43,7 @@ export const Footer = styled.footer`
 
 export const Body = styled.div`
   grid-area: body;
-  padding: 20px;
-  padding-left:15px;
+  padding: 25px;
   padding-right:15px;
   max-height:calc(100vh - 100px);
   overflow:auto;

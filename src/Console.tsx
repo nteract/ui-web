@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 
-const ConsoleDiv = styled.div`
+const ConsoleDiv = styled.div<Props>`
   clear: left;
   min-height: 200px;
   padding: 20px;

@@ -2,17 +2,16 @@ import * as React from "react";
 import styled from "styled-components";
 
 
-const MenuDiv = styled.ul`
+const MenuBox = styled.ul<Props>`
   list-style:none;
   margin: 0px;
   padding:0px;
   display: flex;
 `;
 
-export const MenuItem = styled.li`
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 10px;
+export const MenuItem = styled.li<Props>`
+  padding-right: 5px;
+  margin-right: 0px;
 `;
 
 export interface Props {
@@ -21,10 +20,10 @@ export interface Props {
 
 const Menu  = (props: Props) => {
       return (
-        <MenuDiv {...props} >
+        <MenuBox {...props} >
           {props.children} 
-        </MenuDiv>
+        </MenuBox>
       );
-  } 
+} 
 
 export default Menu

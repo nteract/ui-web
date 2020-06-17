@@ -5,7 +5,7 @@ export default {
   title: 'Console',
   parameters: {
       info: {
-        inline: true,
+        inline: false,
         text: `
     
     ~~~js

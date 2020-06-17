@@ -1,4 +1,5 @@
-import React from 'react';
+/*
+ * import React from 'react';
 import { Button } from '@storybook/react/demo';
 
 export default {
@@ -27,3 +28,5 @@ export const withDetail = () => (
           </span>
     </Button>
 );
+
+ */
