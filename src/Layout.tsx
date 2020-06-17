@@ -6,7 +6,7 @@ export const Layout = styled.div`
   min-height: calc(100vh);
   display: grid;
   grid-template-rows: auto 1fr;
-  grid-template-columns: 220px auto;
+  grid-template-columns: 260px auto;
   grid-row-gap:00px;
   grid-column-gap:0px;
   grid-template-areas:
@@ -18,21 +18,34 @@ export const Layout = styled.div`
 
 export const Header = styled.header`
   grid-area: header;
+
+  display: flex;
+  justify-content: space-between;
   min-height:50px;
   line-height:50px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-bottom: 1px solid #FBECEC;
 `;
 
 export const Footer = styled.footer`
   grid-area:footer;
+
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
   min-height:30px;
   line-height:30px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-top: 1px solid #FBECEC;
 `;
 
 export const Body = styled.div`
   grid-area: body;
-  padding:20px;
+  padding: 20px;
+  padding-left:15px;
+  padding-right:15px;
   max-height:calc(100vh - 100px);
   overflow:auto;
 `;
@@ -41,7 +54,7 @@ export const Side = styled.div`
   grid-area: side;
   background-color:#F9F9FF;
   border-right: 1px solid #FBECEC;
-  min-height: 50px;
+  padding: 10px;
   color: #000;
 `
 

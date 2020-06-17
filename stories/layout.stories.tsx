@@ -13,16 +13,41 @@ export default {
 export const basic = () => (
     <Layout>
       <Header>
-          Header
+
+        <div>
+          Left Menu
+        </div>
+        <div>
+          Center Menu
+        </div>
+        <div>
+          Right Menu
+        </div>
+
       </Header>
       <Side>
+
           Side
+      
       </Side>
       <Body>
+          
           Body
+      
       </Body>
       <Footer>
-          Footer
+        
+       <div>
+          Left Menu
+        </div>
+        <div>
+          Center Menu
+        </div>
+        <div>
+          Right Menu
+        </div>
+
+
       </Footer>
     </Layout>
 );
