@@ -5,16 +5,8 @@ export default {
   title: 'Console',
   parameters: {
       info: {
-        inline: false,
-        text: `
-    
-    ~~~js
-    <Console>
-      Font: Monaco, monospace; <br/>
-      Size: 12px;
-    </Console>
-    ~~~
-  `,},
+        inline: true,
+      },
     },
 };
 

@@ -1,4 +1,4 @@
-import * as React from "react";
+import  React  from "react";
 import styled from "styled-components";
 
 const ButtonDefault = styled.button<Props>`
@@ -11,29 +11,46 @@ padding-left: 15px;
 padding-right: 15px;
 border-radius: 3px;
 text-transform: capitalize;
-cursor: pointer;
+
+${
+  props =>  props.disabled ? "" : `&:hover{
+    cursor:pointer;
+  }
+
+  &:active{
+  background-color: #282357;
+}
+`};
 
 &.outlined {
   background-color: #fff;
   color: #444343;
 
-&:hover{
-  border: 1px solid #FBECEC;
-  color: #000;
+${
+  props =>  props.disabled ? "" : `&:hover{
+    border: 1px solid #FBECEC;
+    color: #000;
+    cursor: pointer;
   }
 
-&:active{
-  background-color: #FBECEC;
-}
+  &:active{
+    background-color: #FBECEC;
+  }
+
+`};
+
 }
 
 &.transparent {
   background-color: #fff;
   color: #444343;
 
-&:hover{
-  color: #000;
-}
+${
+  props =>  props.disabled ? "" : `&:hover{
+    color: #000;
+  }
+  `
+};
 
 }
 
@@ -52,11 +69,19 @@ export interface Props {
   varient?: "outlined" | "transparent" ;
   /** Icon for the button */
   icon?: React.ReactNode;
+  onClick?: () => void;
+  /** For disabled buttons */
+  disabled?: boolean;
 }
+
 
 const Button = (props: Props) => {
       return (
-        <ButtonDefault {...props} className={`${props.varient}`} >
+        <ButtonDefault 
+          {...props} 
+          disabled={props.disabled}
+          onClick={ () => {props.disabled = !props.disabled}  }
+          className={`${props.varient}`} >
            <span className="icon"> {props.icon} </span>  {props.text} 
         </ButtonDefault>
       );
