@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu, {MenuItem} from '../src/Menu';
+import {Menu, MenuItem} from '../src/Menu';
 
 export default {
   title: 'Menu',

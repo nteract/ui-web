@@ -55,9 +55,16 @@ export const Side = styled.div`
   border-right: 1px solid #FBECEC;
   padding: 10px;
   color: #000;
+
+  .logo {
+    width: 80px;
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+  }
 `
 
 Layout.propTypes = Header.propTypes = Footer.propTypes = Body.propTypes = Side.propTypes = {
   children: PropTypes.node
 }
-

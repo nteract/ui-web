@@ -10,7 +10,7 @@ const MenuBox = styled.ul<Props>`
 `;
 
 export const MenuItem = styled.li<Props>`
-  padding-right: 5px;
+  padding-right: 0px;
   margin-right: 0px;
 `;
 
@@ -18,12 +18,10 @@ export interface Props {
   children?: React.ReactNode;
 }
 
-const Menu  = (props: Props) => {
+export const Menu  = (props: Props) => {
       return (
         <MenuBox {...props} >
-          {props.children} 
+          {props.children}
         </MenuBox>
       );
-} 
-
-export default Menu
+}

@@ -1,8 +1,8 @@
 import React from 'react';
-import Console from '../src/Console';
+import Avatar from '../src/Avatar';
 
 export default {
-  title: 'Console',
+  title: 'Avatar',
   parameters: {
       info: {
         inline: false,
@@ -11,8 +11,7 @@ export default {
 };
 
 export const basic = () => (
-  <Console id="3" >
-      Font: Monaco, monospace; <br/>
-      Size: 12px;
-    </Console>
+  <Avatar 
+    username="ramantehlan"
+  />
 );

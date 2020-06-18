@@ -8,7 +8,7 @@ export default {
   title: 'Button',
   parameters: {
       info: {
-        inline: true,
+        inline: false,
       },
     },
 };
@@ -21,15 +21,14 @@ export const basic = () => (
 
 export const outlined = () => (
 <div>
-  <Button text="Outlined Button" varient="outlined" onClick={action('onClick')}  />
-  <br/>  
-  <Button text="Icon Button" varient="outlined" onClick={action('onClick')} icon={icon} />
+  <Button text="Outlined Button" variant="outlined" onClick={action('onClick')}  />
+  <br/>
+  <Button text="Icon Button" variant="outlined" onClick={action('onClick')} icon={icon} />
   <br />
-  <Button text="Disabled Button" varient="outlined" disabled onClick={action('onClick')}  />
+  <Button text="Disabled Button" variant="outlined" disabled onClick={action('onClick')}  />
 </div>
 );
 
 export const link = () => (
-  <Button text="Transparent Button" varient="transparent" onClick={action('onClick')} />
+  <Button text="Transparent Button" variant="transparent" onClick={action('onClick')} />
 );
-

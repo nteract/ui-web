@@ -1,7 +1,8 @@
-import  React  from "react";
+import React from "react";
 import styled from "styled-components";
 
 const ButtonDefault = styled.button<Props>`
+outline:none;
 border: 1px solid transparent;
 color: #fff;
 background-color: #3A347E;
@@ -24,7 +25,7 @@ ${
 
 &.outlined {
   background-color: #fff;
-  color: #444343;
+  color: #545454;
 
 ${
   props =>  props.disabled ? "" : `&:hover{
@@ -66,9 +67,10 @@ export interface Props {
   /** Value of the button */
   text?: string;
   /** Type of button */
-  varient?: "outlined" | "transparent" ;
+  variant?: "outlined" | "transparent" ;
   /** Icon for the button */
   icon?: React.ReactNode;
+  /** OnClick */
   onClick?: () => void;
   /** For disabled buttons */
   disabled?: boolean;
@@ -77,15 +79,15 @@ export interface Props {
 
 const Button = (props: Props) => {
       return (
-        <ButtonDefault 
-          {...props} 
+        <ButtonDefault
+          {...props}
           disabled={props.disabled}
-          onClick={ () => {props.disabled = !props.disabled}  }
-          className={`${props.varient}`} >
-           <span className="icon"> {props.icon} </span>  {props.text} 
+          onClick = {props.onClick}
+          className={`${props.variant}`} >
+           <span className="icon"> {props.icon} </span>  {props.text}
         </ButtonDefault>
       );
-  } 
+  }
 
 
 export default Button

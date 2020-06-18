@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC,  HTMLAttributes} from "react";
 import styled from "styled-components";
 
 
@@ -17,11 +17,11 @@ const ConsoleDiv = styled.div<Props>`
   border-top: 1px solid #000;
 `;
 
-export interface Props {
+export interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   }
 
-const Console = (props: Props) => {
+const Console: FC<Props> = (props: Props) => {
       return (
         <ConsoleDiv {...props} >
           {props.children} 
