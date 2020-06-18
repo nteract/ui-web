@@ -1,5 +1,5 @@
 import React from 'react';
-import Console from '../src/Console';
+import { Console } from '../src/Console';
 
 export default {
   title: 'Console',

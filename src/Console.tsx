@@ -21,7 +21,7 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   }
 
-const Console: FC<Props> = (props: Props) => {
+export const Console: FC<Props> = (props: Props) => {
       return (
         <ConsoleDiv {...props} >
           {props.children} 
@@ -29,4 +29,3 @@ const Console: FC<Props> = (props: Props) => {
       );
   } 
 
-export default Console

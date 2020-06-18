@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+import React, {  HTMLAttributes} from "react";
 import styled from "styled-components";
 
-export const Layout = styled.div`
+export const Layout = styled.div<Props>`
   font-family: roboto;
   min-height: calc(100vh);
   display: grid;
@@ -16,7 +16,7 @@ export const Layout = styled.div`
   font-size: 14px;
 `;
 
-export const Header = styled.header`
+export const Header = styled.header<Props>`
   grid-area: header;
 
   display: flex;
@@ -28,7 +28,7 @@ export const Header = styled.header`
   border-bottom: 1px solid #FBECEC;
 `;
 
-export const Footer = styled.footer`
+export const Footer = styled.footer<Props>`
   grid-area:footer;
 
   display: flex;
@@ -41,7 +41,7 @@ export const Footer = styled.footer`
   border-top: 1px solid #FBECEC;
 `;
 
-export const Body = styled.div`
+export const Body = styled.div<Props>`
   grid-area: body;
   padding: 25px;
   padding-right:15px;
@@ -49,7 +49,7 @@ export const Body = styled.div`
   overflow:auto;
 `;
 
-export const Side = styled.div`
+export const Side = styled.div<Props>`
   grid-area: side;
   background-color:#F9F9FF;
   border-right: 1px solid #FBECEC;
@@ -65,6 +65,7 @@ export const Side = styled.div`
   }
 `
 
-Layout.propTypes = Header.propTypes = Footer.propTypes = Body.propTypes = Side.propTypes = {
-  children: PropTypes.node
+export interface Props extends HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
 }
+

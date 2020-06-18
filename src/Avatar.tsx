@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC,  HTMLAttributes} from "react";
 import styled from "styled-components";
 
 const Box = styled.div<Props>`
@@ -30,18 +30,22 @@ const Img = styled.img<Props>`
   background-color: #EBD8D8;
 `;
 
-export interface Props {
+export interface Props extends HTMLAttributes<HTMLDivElement>   {
+  /** User image for avatar **/
   userImage?: string,
+  /** Username of the user for github, gitlab or other sites **/
   username?: string,
-  userlink?: string,
+  /** User link is the link to the user profile on the VCS platform **/
+  userLink?: string,
+  /** Children is the child/sub nodes **/
   children?: React.ReactNode
 }
 
-const Avatar = (props: Props) => {
+export const Avatar: FC<Props> = (props: Props) => {
       return (
         <Box >
             <Username >
-                <a href={props.userlink}> 
+                <a href={props.userLink}> 
                   @{props.username}
                 </a>
             </Username>
@@ -53,7 +57,6 @@ const Avatar = (props: Props) => {
 Avatar.defaultProps = {
   username: "username",
   userImage: "https://api.adorable.io/avatars/61/abott@adorable.png",
-  userlink: "#",
+  userLink: "#",
 }
 
-export default Avatar

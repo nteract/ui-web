@@ -1,6 +1,5 @@
-import * as React from "react";
+import React, { FC,  HTMLAttributes} from "react";
 import styled from "styled-components";
-
 
 const MenuBox = styled.ul<Props>`
   list-style:none;
@@ -14,11 +13,12 @@ export const MenuItem = styled.li<Props>`
   margin-right: 0px;
 `;
 
-export interface Props {
+
+export interface Props extends HTMLAttributes<HTMLUListElement>  {
   children?: React.ReactNode;
 }
 
-export const Menu  = (props: Props) => {
+export const Menu: FC<Props>  = (props: Props) => {
       return (
         <MenuBox {...props} >
           {props.children}

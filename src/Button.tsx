@@ -1,16 +1,16 @@
-import React from "react";
+import React, { FC,  HTMLAttributes} from "react";
 import styled from "styled-components";
 
 const ButtonDefault = styled.button<Props>`
 outline:none;
-border: 1px solid transparent;
+border: 1px solid #3A347E;
 color: #fff;
 background-color: #3A347E;
 line-height: 28px;
-height: 30px;
+height: 32px;
 padding-left: 15px;
 padding-right: 15px;
-border-radius: 3px;
+border-radius: 4px;
 text-transform: capitalize;
 
 ${
@@ -61,9 +61,7 @@ ${
 
 `;
 
-
-
-export interface Props {
+export interface Props extends HTMLAttributes<HTMLButtonElement> {
   /** Value of the button */
   text?: string;
   /** Type of button */
@@ -76,8 +74,7 @@ export interface Props {
   disabled?: boolean;
 }
 
-
-const Button = (props: Props) => {
+export const Button: FC<Props> = (props: Props) => {
       return (
         <ButtonDefault
           {...props}
@@ -89,5 +86,8 @@ const Button = (props: Props) => {
       );
   }
 
+// If we want to pass on the default values
+Button.defaultProps = {
+  text: "Button"
+}
 
-export default Button

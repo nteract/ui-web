@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../src/Button';
+import { Button } from '../src/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import { action } from '@storybook/addon-actions'
