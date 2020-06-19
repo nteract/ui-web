@@ -1,7 +1,7 @@
 import React, { FC,  HTMLAttributes,  useState } from "react";
 import styled from "styled-components";
-import { Button } from "../src/Button";
-import { Input } from "../src/Input";
+import { Button } from "./Button";
+import { Input } from "./Input";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRocket } from '@fortawesome/free-solid-svg-icons'
 
@@ -12,6 +12,8 @@ const BinderMenuDiv = styled.div<Props>`
     border-bottom:0px solid #d1e3dd;
     padding:25px;
     display: flex;
+    align-items: center;
+
 
     form {
         display: flex;
@@ -33,7 +35,7 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
   /** Children is the child/sub nodes **/
   children?: React.ReactNode;
   /** Provider is the name of VCS **/
-  provider?: "gh";
+  provider?: string;
   /** VCS owner of the repo **/
   org?: string;
   /** Name of the VCS repo **/
@@ -69,9 +71,9 @@ export const BinderMenu: FC<Props> = (props: Props) => {
 
       <BinderMenuDiv {...props}>
 
-        <img className="binder-logo" src="https://mybinder.org/static/logo.svg?v=f9f0d927b67cc9dc99d788c822ca21c0" />
+        <img className="binder-logo" alt="binder-logo" src="https://mybinder.org/static/logo.svg?v=f9f0d927b67cc9dc99d788c822ca21c0" />
         <form onSubmit={(e) => props.updateVCSInfo( e, provider.value, org.value, repo.value, gitRef.value )} >
-          <Input variant="select" { ...provider} style={{width: "120px"}}>
+          <Input variant="select" label="VCS" { ...provider} style={{width: "120px"}}>
                       <option value="gh">Github</option>
                 </Input>
                 <Input label="Owner" {...org} />

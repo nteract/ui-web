@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Box = styled.div<Props>`
  color:  #545454;
  font-family: roboto;
- font-size: 14px;
+ font-size: 13px;
 
 input, select {
   height: 30px; 
@@ -17,7 +17,7 @@ input, select {
 
 label {
   position: absolute;
-  margin-top: -25px;
+  margin-top: -30px;
 }
 
 `;

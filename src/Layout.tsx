@@ -57,7 +57,7 @@ export const Side = styled.div<Props>`
   color: #000;
 
   .logo {
-    width: 80px;
+    width: 110px;
     display: block;
     margin: auto;
     margin-top: 5px;

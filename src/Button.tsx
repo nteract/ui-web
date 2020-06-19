@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 const ButtonDefault = styled.button<Props>`
 outline:none;
-border: 1px solid #3A347E;
+border: 1px solid transparent;
 color: #fff;
 background-color: #3A347E;
 line-height: 28px;
-height: 32px;
+height: 30px;
 padding-left: 15px;
 padding-right: 15px;
 border-radius: 4px;
