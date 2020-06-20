@@ -43,9 +43,9 @@ export const Footer = styled.footer<Props>`
 
 export const Body = styled.div<Props>`
   grid-area: body;
-  padding: 25px;
+  padding: 0px;
   padding-right:15px;
-  max-height:calc(100vh - 100px);
+  max-height:calc(100vh - 82px);
   overflow:auto;
 `;
 

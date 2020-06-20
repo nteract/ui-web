@@ -6,11 +6,14 @@ const MenuBox = styled.ul<Props>`
   margin: 0px;
   padding:0px;
   display: flex;
+  height: 50px;
+  align-items: center;
 `;
 
 export const MenuItem = styled.li<Props>`
   padding-right: 0px;
   margin-right: 0px;
+  
 `;
 
 

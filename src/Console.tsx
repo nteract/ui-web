@@ -15,11 +15,13 @@ const ConsoleDiv = styled.div<Props>`
   overflow: auto;
   counter-reset: line-numbering;
   border-top: 1px solid #000;
+  z-index: 1000;
 `;
+
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
-  }
+}
 
 export const Console: FC<Props> = (props: Props) => {
       return (

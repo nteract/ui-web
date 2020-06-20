@@ -1,5 +1,6 @@
 import React from 'react';
 import {Menu, MenuItem} from '../src/Menu';
+import { Avatar } from '../src/Avatar';
 
 export default {
   title: 'Menu',
@@ -13,7 +14,7 @@ export default {
 export const basic = () => (
     <Menu >
       <MenuItem>
-        Item
+        <Avatar />
       </MenuItem>
       <MenuItem>
         Item

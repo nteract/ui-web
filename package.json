@@ -28,7 +28,8 @@
     "babel-loader": "^8.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "xterm": "^4.7.0"
   },
   "devDependencies": {
     "@storybook/addon-info": "^5.3.19",
