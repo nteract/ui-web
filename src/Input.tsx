@@ -5,8 +5,13 @@ const Box = styled.div<Props>`
  color:  #545454;
  font-family: roboto;
  font-size: 13px;
+ line-height: 20px;
+ padding-top: 25px;
+ display: flex;
+ align-items: flex-start;
 
-input, select {
+
+.input, .select, .textarea {
   height: 30px; 
   min-width: 80px;
   background-color: #fff;
@@ -15,32 +20,68 @@ input, select {
   padding-left: 5px;
 }
 
-label {
-  position: absolute;
-  margin-top: -30px;
+.textarea{
+  padding-top: 5px;
+  min-height: 80px;
+  resize: none;
+}
+
+.checkbox{
+  margin-left: 0px;
+  margin-right: 8px;
+  width: 15px;
 }
 
 `;
 
+const Label = styled.label<CommonProps>`
+  position: absolute;
+  margin-top: -27px;
 
+  &.checkbox-label{
+  margin-top: 0px;  
+  margin-left: 22px;
+}
 
+`
 
-export interface Props extends HTMLAttributes<HTMLInputElement | HTMLSelectElement> {
+export interface CommonProps {
   children?: React.ReactNode | string;
-  variant?: "select" | "input";
+  for?: string;
+}
+
+export interface Props extends HTMLAttributes<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement> {
+  children?: React.ReactNode | string;
+  variant?: "select" | "input" | "textarea" | "checkbox";
   label?: string;
+  value?: string;
+  checked?: boolean;
 }
 
 export const Input: FC<Props> = (props: Props) => {
-      return (
-        <Box >
-          <label >{props.label}</label>
-          { props.variant == "input" 
-              ? <input  id={props.id} type="input" {...props} />
-              : <select id={props.id} {...props} >
+      let style={}
+      let input = (
+           <input  id={props.id} className={`input ${props.className}`}  type="input" {...props} />
+      )
+
+      if (props.variant == "select"){
+        input = (<select id={props.id} {...props} className={`select ${props.className}`} style={{ height: "34px", width: "120px"}} >
                   {props.children}
-              </select>
-          }
+              </select>)
+      }else if (props.variant == "textarea"){
+        input = ( <textarea id={props.id} {...props} className={`textarea ${props.className}`}  value={props.value} />)
+      }else if (props.variant == "checkbox"){
+        input = (<> <input type="checkbox" className={`checkbox ${props.className}`} checked={props.checked} /> <Label className="checkbox-label" for={props.id}> {props.label} </Label> </> )
+        style = { padding: "0px" }
+      }
+
+
+    return (
+        <Box style={style} >
+            { props.variant !== "checkbox"  &&
+              <Label for={props.id} >{props.label}</Label>
+             }
+          {input}
         </Box>
       );
   } 
@@ -49,6 +90,8 @@ Input.defaultProps = {
   id: "name",
   variant: "input",
   label: "label",
+  value: "",
+  checked: false,
 }
 
 

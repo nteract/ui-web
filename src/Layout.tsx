@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const Layout = styled.div<Props>`
   font-family: roboto;
+  color:  #545454;
   min-height: calc(100vh);
   display: grid;
   grid-template-rows: auto 1fr;

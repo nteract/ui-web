@@ -23,4 +23,9 @@ export const select = () => (
   </Input>
 );
 
+export const textArea = () => (
+  <Input variant="textarea" value="Data" />
+);
+
+
 
