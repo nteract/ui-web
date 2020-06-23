@@ -1,4 +1,4 @@
-import React, { FC,  HTMLAttributes} from "react";
+import React, { FC,  HTMLAttributes, MutableRefObject } from "react";
 import styled from "styled-components";
 
 export const Shadow = styled.div<Props>`
@@ -16,6 +16,11 @@ export const Shadow = styled.div<Props>`
 `
 
 const DialogBox = styled.div<Props>`
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  margin-left: -200px;
+  z-index:1002;
   width: 400px;
   padding: 20px;
   font-family: Roboto, monospace;
@@ -40,6 +45,7 @@ export const DialogFooter = styled.div<Props>`
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
+  ref?: MutableRefObject<any>;
 }
 
 export const Dialog: FC<Props> = (props: Props) => {

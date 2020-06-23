@@ -12,7 +12,7 @@ const Box = styled.div<Props>`
 
 
 .input, .select, .textarea {
-  height: 30px; 
+  height: 32px; 
   min-width: 80px;
   background-color: #fff;
   border: 1px solid #EBD8D8;
@@ -47,7 +47,6 @@ const Label = styled.label<CommonProps>`
 
 export interface CommonProps {
   children?: React.ReactNode | string;
-  for?: string;
 }
 
 export interface Props extends HTMLAttributes<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement> {
@@ -56,22 +55,23 @@ export interface Props extends HTMLAttributes<HTMLInputElement | HTMLSelectEleme
   label?: string;
   value?: string;
   checked?: boolean;
+  autoFocus?: boolean;
 }
 
 export const Input: FC<Props> = (props: Props) => {
       let style={}
       let input = (
-           <input  id={props.id} className={`input ${props.className}`}  type="input" {...props} />
+           <input  id={props.id} className={`input ${props.className}`} autoFocus={props.autoFocus}  type="input" {...props} />
       )
 
-      if (props.variant == "select"){
+      if (props.variant === "select"){
         input = (<select id={props.id} {...props} className={`select ${props.className}`} style={{ height: "34px", width: "120px"}} >
                   {props.children}
               </select>)
-      }else if (props.variant == "textarea"){
+      }else if (props.variant === "textarea"){
         input = ( <textarea id={props.id} {...props} className={`textarea ${props.className}`}  value={props.value} />)
-      }else if (props.variant == "checkbox"){
-        input = (<> <input type="checkbox" className={`checkbox ${props.className}`} checked={props.checked} /> <Label className="checkbox-label" for={props.id}> {props.label} </Label> </> )
+      }else if (props.variant === "checkbox"){
+        input = (<> <input type="checkbox"  className={`checkbox ${props.className}`} checked={props.checked} onChange={props.onChange} /> <Label className="checkbox-label" htmlFor={props.id}> {props.label} </Label> </> )
         style = { padding: "0px" }
       }
 
@@ -79,7 +79,7 @@ export const Input: FC<Props> = (props: Props) => {
     return (
         <Box style={style} >
             { props.variant !== "checkbox"  &&
-              <Label for={props.id} >{props.label}</Label>
+              <Label htmlFor={props.id} >{props.label}</Label>
              }
           {input}
         </Box>
@@ -91,7 +91,7 @@ Input.defaultProps = {
   variant: "input",
   label: "label",
   value: "",
-  checked: false,
+  checked: false
 }
 
 

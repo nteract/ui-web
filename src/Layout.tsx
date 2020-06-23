@@ -22,7 +22,7 @@ export const Header = styled.header<Props>`
 
   display: flex;
   justify-content: space-between;
-  min-height:50px;
+  height:49px;
   line-height:50px;
   padding-left: 15px;
   padding-right: 15px;
@@ -35,7 +35,7 @@ export const Footer = styled.footer<Props>`
   display: flex;
   font-size: 12px;
   justify-content: space-between;
-  min-height:30px;
+  height:31px;
   line-height:30px;
   padding-left: 15px;
   padding-right: 15px;
