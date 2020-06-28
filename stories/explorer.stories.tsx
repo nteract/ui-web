@@ -19,8 +19,9 @@ const directoryList = [
       { name: 'test.ipynb' },
       {
         name: 'Another Folder',
-        subItems: [{ name: 'recentTrends.ipynb' }, { name: 'newData.ipynb' }],
+        subItems: [{ name: 'recentTrends.ipynb' }, { name: 'newData.ipynb' }, { name: 'My Subfolder', subItems: [{ name: 'lasers.ipynb' }] }],
       },
+
     ],
   },
 ];

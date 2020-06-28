@@ -17,3 +17,4 @@ export const Sidebar: FC<Props> = ({ isVisible, subItems, children }) => (
     </ul>
   </nav>
 );
+

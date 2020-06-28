@@ -2,7 +2,7 @@ import React, { FC,  HTMLAttributes} from "react";
 import styled from "styled-components";
 
 
-const ConsoleDiv = styled.div<Props>`
+const Box = styled.div<Props>`
   clear: left;
   min-height: 200px;
   padding: 20px;
@@ -23,11 +23,11 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const Console: FC<Props> = (props: Props) => {
+export const FileExplorer: FC<Props> = (props: Props) => {
       return (
-        <ConsoleDiv {...props} >
+        <Box {...props} >
           {props.children} 
-        </ConsoleDiv>
+        </Box>
       );
   } 
 
