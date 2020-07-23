@@ -75,12 +75,12 @@ export const BinderMenu: FC<Props> = (props: Props) => {
         <img className="binder-logo" alt="binder-logo" src="https://mybinder.org/static/logo.svg?v=f9f0d927b67cc9dc99d788c822ca21c0" />
         <form onSubmit={(e) => props.updateVCSInfo( e, provider.value, org.value, repo.value, gitRef.value )} >
           <div style={{display: "flex",  marginTop: "-25px"}} >
-                <Input variant="select" label="VCS"  { ...provider} style={{width: "120px"}}>
+                <Input id="vcs" variant="select" label="VCS"  { ...provider} style={{width: "120px"}}>
                       <option value="gh">Github</option>
                 </Input>
-                <Input label="Owner" {...org} autoFocus />
-                <Input  label="Repository" {...repo}/>
-                <Input label="Branch" {...gitRef}/>
+                <Input id="owner" label="Owner" {...org} autoFocus />
+                <Input id="repo" label="Repository" {...repo}/>
+                <Input id="branch" label="Branch" {...gitRef}/>
             </div>
           <Button text="Launch" style={ {marginLeft: '30px'}} icon={rocketIcon} />
           </form>

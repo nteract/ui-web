@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 import {BinderMenu} from '../src/BinderMenu';
 
 export default {
@@ -16,6 +17,6 @@ function updateVCSInfo(e: React.FormEvent<HTMLFormElement>, provider: string | u
 }
 
 export const basic = () => (
-    <BinderMenu provider="gh" updateVCSInfo={updateVCSInfo} >
+    <BinderMenu provider="gh" updateVCSInfo={updateVCSInfo} onClick={action('onclick')} >
     </BinderMenu>
 );
