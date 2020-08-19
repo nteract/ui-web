@@ -18,15 +18,42 @@ const ConsoleDiv = styled.div<Props>`
   z-index: 1000;
 `;
 
+const Log = styled.div<LogProps>`
+  color: white;
+
+  .preLog{
+    color: gray;
+  }
+
+  &.success{
+      color: #0b9a0b;
+  }
+
+  &.failure {
+      color: #ef2400;
+  }
+`
+
+export interface LogProps extends HTMLAttributes<HTMLDivElement>   {
+  children: React.ReactNode,
+}
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
+  logs: { type: string; message: string; }[]
 }
 
 export const Console: FC<Props> = (props: Props) => {
       return (
         <ConsoleDiv {...props} >
           {props.children} 
+          { props.logs.map( (value, index) => {
+            return (<Log className={value.type}>
+                <span className="preLog">$ </span>
+                    {value.message} 
+                     </Log> )
+            })
+          }
         </ConsoleDiv>
       );
   } 

@@ -10,9 +10,13 @@ export default {
     },
 };
 
+const logs = [ 
+  { type: "success", message: "All good!" }, 
+  { type: "failure", message: "Something is wrong!" },
+  { type: "", message: "This is a long message and their is no type defined for it." }
+]
+
 export const basic = () => (
-  <Console id="3" >
-      Font: Monaco, monospace; <br/>
-      Size: 12px;
+  <Console logs={logs} >
     </Console>
 );
